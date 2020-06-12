@@ -14,6 +14,8 @@ gulp.task('server', function() {
 
     gulp.watch('build/**/*').on('change', browserSync.reload);
 });
+
+/*---------------Pug----------*/
 gulp.task('template', function buildHTML() {
   return gulp.src('source/template/index.pug')
   .pipe(pug({
@@ -31,7 +33,7 @@ gulp.task('sass', function () {
 });
 /*---------------Sprite----------*/
 gulp.task('sprite', function (cb) {
-  const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
+  const spriteData = gulp.src('source/images/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
     cssName: 'sprite.scss'
