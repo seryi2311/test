@@ -3,7 +3,8 @@ const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
 const sass  = require('gulp-sass');
 const spritesmith = require('gulp.spritesmith');
-const  rimraf = require('rimraf');
+const rimraf = require('rimraf');
+const autoprefixer = require('gulp-autoprefixer');
 gulp.task('server', function() {
     browserSync.init({
         server: {
@@ -33,7 +34,7 @@ gulp.task('sass', function () {
 });
 /*---------------Sprite----------*/
 gulp.task('sprite', function (cb) {
-  const spriteData = gulp.src('source/images/*.png').pipe(spritesmith({
+  const spriteData = gulp.src('source/images.icons/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
     cssName: 'sprite.scss'
@@ -51,13 +52,13 @@ gulp.task('sprite', function (cb) {
 
 /*----------Copy fonts------------------*/
   gulp.task('copy:fonts',function(){
-    return gulp.src('.source/fonts/**/*.*')
+    return gulp.src('source/fonts/**/*.*')
     .pipe(gulp.dest('build/fonts'));
   });
 
 /*----------Copy images------------------*/
   gulp.task('copy:images',function(){
-    return gulp.src('.source/images/**/*.*')
+    return gulp.src('source/images/**/*.*')
     .pipe(gulp.dest('build/images'));
   });
 

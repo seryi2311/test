@@ -1,26 +1,11 @@
 header.header
   .header_top
     .container
-      .contacts
-        a.contact(href="tel:+88005553535")
-          i.fas.fa-phone
-          span.contact_text 890423
+      include contact.pug
 
-          a.contact(href="mailto:serey2311@gmail.com")
-          i.fas.fa-envelope-open-text
-          span.contact_text serey2311@gmail.com
-
-          a.facebook-icon(href="facebook.com")
-            i.fab.fa-facebook-f
 
   .container
     .header_bottom
-      .logo: img.logo_picture
-      nav.nav
-      - var items = ['Home', 'About us', 'Our Approch', 'Our Work']
-        each item in items
-          if item==='Home'
-            a.nav_link.nav_link-active(href="#")=item
-          else
-            a.nav_link(href="#")=item
-      a.button.header_button.button-red(href="#") Free
+      .logo: img.logo_picture(src="images/logo.png" alt="picture")
+      include nav
+      a.button.header_button.button-red(href="#") Free Consultation
