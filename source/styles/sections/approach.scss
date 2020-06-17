@@ -15,13 +15,16 @@
     background: #fff;
     display: flex;
 
+
+    @media(max-width: 670px){
+      display: block;
+      padding: 25px;
+    }
+
+
     &:nth-child(2n){
       flex-direction: row-reverse;
       text-align: right;
-
-      .approach_text{
-        padding: 70px 90px;
-      }
 
       .approach_step{
         right: auto;
@@ -34,6 +37,16 @@
     max-width: 340px;
     max-height: 236px;
     vertical-align: top;
+
+    @media(max-width: 985px){
+      max-width: calc(340px/1.5);
+      max-height: calc(340px/1.5);
+    }
+
+    @media(max-width: 670px){
+      display: block;
+      margin: auto;
+    }
   }
 
 
@@ -47,6 +60,16 @@
     width: 64%;
     padding: 70px 70px 55px 90px;
     font-size: 0.875rem;
+
+    @media(max-width: 985px){
+      padding: 25px 20px;
+    }
+
+    @media(max-width: 700px){
+      width: 100%;
+      text-align: center;
+    }
+
   }
 
 
@@ -86,4 +109,4 @@
     margin: 0;
     line-height: 1.5;
   }
-}
+} 

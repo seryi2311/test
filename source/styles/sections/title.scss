@@ -3,6 +3,10 @@
  margin-bottom: 65px;
  text-align: center;
 
+ @media(max-width: 670px){
+   margin-bottom: 20px
+ }
+
  &_header {
    margin: 0;
    font-size: 2.25rem;
